@@ -4,15 +4,12 @@ import { Observable } from "rxjs";
 import { Product } from "./product.model";
 import { Order } from "./order.model";
 
-const PROTOCOL = "http";
-const PORT = 3500;
-
 @Injectable()
 export class RestDataSource {
   baseUrl: string;
 
   constructor(private http: HttpClient) {
-    this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`;
+    this.baseUrl = `http://localhost:3500/`;
   }
   
   getProducts(): Observable<Product[]> {
